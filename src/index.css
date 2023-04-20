@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    box-shadow: 0px 0px 10px rgb(12, 12, 12);
+}
+nav h1{
+    font-size: 2.6rem;
+}
+nav div{
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+}
+nav a{
+    font-size: 1.5rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* main */
+main{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 4rem 3rem;
+    gap: 2rem;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px -4px rgb(26, 25, 25);
+    border-radius: 10px;
+}
+.product img{
+    width: 90%;
+}
+.product div{
+    padding: 1rem 0;
+    text-align: center;
+    
+}
+.product p{
+    margin: 1rem 0;
+    font-size: 20px;
+}
+.product h1{
+    margin: 1rem 0;
+    font-size: 36px
+}
+.product button{
+    background-color: white;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
 }
