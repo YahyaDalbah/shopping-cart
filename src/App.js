@@ -20,11 +20,7 @@ function App() {
   function addToCart(id){
     setCartItems(prev => ({...prev, [id]: prev[id] + 1}))
   }
-
-  function removeFromCart(id){
-    setCartItems(prev => ({...prev, [id]: prev[id] - 1}))
-  }
-
+  
   function changeCart(id, num){
     setCartItems(prev => ({...prev, [id]: num > 0 ? num : 0}))
   }

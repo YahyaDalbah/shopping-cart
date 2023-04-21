@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import CartItem from './CartItem'
 import { products } from '../assets/products';
 import { Link } from 'react-router-dom';
+import Form from './Form';
 
 
 
 export default function Cart({cartItems , changeCart}) {
+
+  const [checkedOut, setCheckedOut] = useState(false)
 
   function getTotal(){
     let total = 0
@@ -15,6 +18,12 @@ export default function Cart({cartItems , changeCart}) {
       }
     })
     return total
+  }
+
+  function checkOut(){
+    if(getTotal() > 0){
+      setCheckedOut(true)
+    }
   }
 
   return (
@@ -28,9 +37,10 @@ export default function Cart({cartItems , changeCart}) {
         <p>total: {getTotal()}$</p>
         <div>
           <button><Link to="/">continue shopping</Link></button>
-          <button>check out</button>
+          <button onClick={checkOut}>check out</button>
         </div>
       </footer>
+      {(checkedOut)  && <Form />}
     </div>
   )
 }
